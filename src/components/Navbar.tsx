@@ -8,7 +8,7 @@ const Navbar = () => {
             <div className="space-x-4 md:space-x-8 text-base md:text-sm text-[#FF3D49]">
                 <StaggeredLink href="/">HOME</StaggeredLink>
                 <StaggeredLink href="https://github.com/mbouli">GITHUB</StaggeredLink>
-⚙️                <StaggeredLink href="https://mase.zip" newTab={true}>ARCHIVE</StaggeredLink>
+                <StaggeredLink href="https://mase.zip" newTab={true}>ARCHIVE</StaggeredLink>
             </div>
             <div className="space-x-4 md:space-x-8 text-bold md:text-sm text-[#FF3D49]">
                 {(() => {
