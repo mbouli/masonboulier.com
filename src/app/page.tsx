@@ -34,6 +34,7 @@ export default function Home() {
           </p>
           <div className="space-x-4 md:space-x-8 text-base md:text-lg pt-1 text-[#FF3D49]">
             <Link href="https://instagram.com/masonboulier" className='hover:underline font-bold'>INSTAGRAM</Link>
+            {/* <Link href="/projects" className='hover:underline font-bold'>PROJECTS</Link> */}
           </div>
         </div>
       </div>

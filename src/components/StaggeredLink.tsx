@@ -1,13 +1,14 @@
 'use client';
 import { motion } from "framer-motion";
 
-const StaggeredLink = ({ children, href, className, DURATION = 0.3, STAGGER = 0.05 }: { children: string; href: string; className?: string; DURATION?: number; STAGGER?: number }) => {
+const StaggeredLink = ({ children, href, className, DURATION = 0.3, STAGGER = 0.05, newTab = false }: { children: string; href: string; className?: string; DURATION?: number; STAGGER?: number; newTab?: boolean }) => {
     return (
         <motion.a
             initial="inital"
             whileHover="hovered"
             className="relative link inline-block overflow-hidden whitespace-nowrap"
             href={href}
+            target={newTab ? "_blank" : "_self"}
             style={{
                 lineHeight: 0.85,
                 letterSpacing: '.04em'
