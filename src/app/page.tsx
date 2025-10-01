@@ -3,12 +3,14 @@ import Navbar from '@/components/Navbar'
 import Silk from '@/components/Silk';
 import Image from 'next/image';
 import logo from '../../public/masonboulier.png'
-import Link from 'next/link';
 import StaggeredLink from '@/components/StaggeredLink';
+import { Analytics } from "@vercel/analytics/next"
+
 
 export default function Home() {
   return (
     <>
+      <Analytics />
       <Loader />
       <div style={{ width: '100%', height: '100vh', position: 'relative' }}>
         <Navbar />
