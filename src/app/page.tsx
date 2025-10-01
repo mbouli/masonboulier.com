@@ -4,6 +4,7 @@ import Silk from '@/components/Silk';
 import Image from 'next/image';
 import logo from '../../public/masonboulier.png'
 import Link from 'next/link';
+import StaggeredLink from '@/components/StaggeredLink';
 
 export default function Home() {
   return (
@@ -27,14 +28,15 @@ export default function Home() {
             className="md:-mb-[35px]"
           />
           <p className="text-sm md:max-w-3/4 md:text-lg font-bold md:leading-relaxed md:tracking-wide text-white">
-            I am Mason Boulier, an aspiring software engineer,
+            I am Mason Boulier, a passionate full-stack dev,
             studying computer science at Auburn University.
-            I am also really passionate about photography and design.
+            I am also really into photography and design.
             I am open to freelance, feel free to connect!
           </p>
-          <div className="space-x-4 md:space-x-8 text-base md:text-lg pt-1 text-[#FF3D49]">
-            <Link href="https://instagram.com/masonboulier" className='hover:underline font-bold'>INSTAGRAM</Link>
-            {/* <Link href="/projects" className='hover:underline font-bold'>PROJECTS</Link> */}
+          <div className="space-x-4 md:space-x-8 text-base font-bold md:text-lg pt-1 text-[#FF3D49]">
+            <StaggeredLink href="https://instagram.com/masonboulier">INSTA</StaggeredLink>
+            <StaggeredLink href="https://github.com/mbouli">GITHUB</StaggeredLink>
+            <StaggeredLink href="mailto:bouliermas@gmail.com">EMAIL</StaggeredLink>
           </div>
         </div>
       </div>
