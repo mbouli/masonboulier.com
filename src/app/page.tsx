@@ -30,7 +30,7 @@ export default function Home() {
             className="md:-mb-[35px]"
           />
           <p className="text-sm md:max-w-3/4 md:text-lg font-bold md:leading-relaxed md:tracking-wide text-white">
-            I am Mason Boulier, a passionate full-stack dev,
+            I am Mason Boulier, a passionate developer,
             studying computer science at Auburn University.
             I am also really into photography and design.
             I am open to freelance, feel free to connect!
