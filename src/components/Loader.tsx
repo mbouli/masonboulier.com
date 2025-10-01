@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { motion, AnimatePresence, easeInOut } from 'framer-motion'
 
 export default function Loader() {

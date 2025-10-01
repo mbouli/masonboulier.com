@@ -1,7 +1,7 @@
 'use client';
 import { motion } from "framer-motion";
 
-const StaggeredLink = ({ children, href, className, DURATION = 0.3, STAGGER = 0.05, newTab = false }: { children: string; href: string; className?: string; DURATION?: number; STAGGER?: number; newTab?: boolean }) => {
+const StaggeredLink = ({ children, href, DURATION = 0.3, STAGGER = 0.05, newTab = false }: { children: string; href: string; DURATION?: number; STAGGER?: number; newTab?: boolean }) => {
     return (
         <motion.a
             initial="inital"
