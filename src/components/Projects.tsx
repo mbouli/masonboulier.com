@@ -66,7 +66,7 @@ const Projects = () => {
                             {project.name}
                         </h3>
                         <span className="link whitespace-nowrap text-base font-bold md:text-lg text-[#FF3D49] transition-colors duration-150 group-hover:text-[#171717]">
-                            <StaggeredLink href={project.href} newTab={true}>VISIT SITE ↗</StaggeredLink>
+                            <StaggeredLink>VISIT SITE ↗</StaggeredLink>
                         </span>
                     </div>
 

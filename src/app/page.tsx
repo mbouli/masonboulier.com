@@ -28,7 +28,8 @@ export default function Home() {
             alt="Mason Boulier"
             width={500}
             height={750}
-            className="md:-mb-[35px]"
+            priority
+            className="w-auto h-auto md:-mb-[35px]"
           />
           <p className="text-sm md:max-w-3/4 md:text-lg font-bold md:leading-relaxed md:tracking-wide text-white">
             I am Mason Boulier, a passionate developer,
