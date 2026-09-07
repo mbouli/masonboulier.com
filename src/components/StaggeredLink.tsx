@@ -29,7 +29,7 @@ const StaggeredLink = ({ children, href, DURATION = 0.3, STAGGER = 0.05, newTab 
                         className="inline-block antialiased"
                         key={i}
                     >
-                        {letter}
+                        {letter === " " ? "\u00A0" : letter}
                     </motion.span>
                 })}
             </div>
@@ -48,7 +48,7 @@ const StaggeredLink = ({ children, href, DURATION = 0.3, STAGGER = 0.05, newTab 
                         className="inline-block antialiased"
                         key={i}
                     >
-                        {letter}
+                        {letter === " " ? "\u00A0" : letter}
                     </motion.span>
                 })}
             </div>
