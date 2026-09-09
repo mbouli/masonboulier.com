@@ -32,15 +32,13 @@ export default function Home() {
             className="w-auto h-auto md:-mb-[35px]"
           />
           <p className="text-sm md:max-w-3/4 md:text-lg font-bold md:leading-relaxed md:tracking-wide text-white">
-            I am Mason Boulier, a passionate developer,
-            studying computer science at Auburn University.
-            I am also really into photography and design.
-            I am open to freelance, feel free to connect!
+            I&#39;m Mason Boulier, a CS student at Auburn University who loves building things with code and design.
+            I&#39;m interested in all things software and mixing creativity with technology.
+            When I&#39;m not coding, I&#39;m probably taking photos or designing something.
           </p>
           <div className="space-x-4 md:space-x-8 text-base font-bold md:text-lg pt-1 text-[#FF3D49]">
-            <StaggeredLink href="https://instagram.com/masonboulier">INSTA</StaggeredLink>
             <StaggeredLink href="https://github.com/mbouli">GITHUB</StaggeredLink>
-            <StaggeredLink href="mailto:bouliermas@gmail.com">EMAIL</StaggeredLink>
+            <StaggeredLink href="mailto:mtb0121@auburn.edu">EMAIL ME</StaggeredLink>
           </div>
         </div>
       </div>

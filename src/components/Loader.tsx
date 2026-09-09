@@ -12,14 +12,14 @@ export default function Loader() {
                     initial={{ y: 0 }}
                     animate={{ y: '100%' }}
                     transition={{
-                        delay: 2.25,
+                        delay: 1.25,
                         duration: 0.75,
                         ease: [0.895, 0.03, 0.685, 0.22], // EASE IN QUART
                     }}
                     onAnimationComplete={() => setDone(true)}
                     className="fixed inset-0 z-50 bg-[#FF3D49] text-white flex items-center justify-center"
                 >
-                    <TextStagger>DEVELOPER + CREATIVE = ?</TextStagger>
+                    <TextStagger>MADE YOU LOOK</TextStagger>
                 </motion.div>
             )}
         </AnimatePresence>
