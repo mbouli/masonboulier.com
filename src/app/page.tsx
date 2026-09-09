@@ -5,6 +5,7 @@ import Image from 'next/image';
 import logo from '../../public/masonboulier.png'
 import StaggeredLink from '@/components/StaggeredLink';
 import Projects from '@/components/Projects';
+import ScrollCue from '@/components/ScrollCue';
 import { Analytics } from "@vercel/analytics/next"
 
 
@@ -41,6 +42,7 @@ export default function Home() {
             <StaggeredLink href="mailto:mtb0121@auburn.edu">EMAIL ME</StaggeredLink>
           </div>
         </div>
+        <ScrollCue />
       </div>
       <Projects />
     </>
