@@ -42,13 +42,13 @@ const Projects = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.5 }}
                 transition={{ duration: 0.5, ease: 'easeInOut' }}
-                className="link flex justify-between items-baseline px-9 pb-2 text-base font-bold md:text-sm text-[#FF3D49]"
+                className="link flex justify-between items-baseline px-9 pb-2 text-base font-bold md:text-sm text-accent transition-colors duration-500"
             >
                 <h2>WORK</h2>
                 <span>({String(projects.length).padStart(3, '0')})</span>
             </motion.div>
 
-            <div className="border-t border-[#FF3D49]" />
+            <div className="border-t border-accent transition-colors duration-500" />
 
             {projects.map((project, i) => (
                 <motion.a
@@ -59,13 +59,13 @@ const Projects = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.2 }}
                     transition={{ duration: 0.5, ease: 'easeInOut', delay: 0.1 }}
-                    className="group block border-b border-white/20 pt-6 pb-4 transition-colors duration-150 hover:bg-[#FF3D49]"
+                    className="group block border-b border-white/20 pt-6 pb-4 transition-colors duration-150 hover:bg-accent"
                 >
                     <div className="flex justify-between items-baseline px-9">
                         <h3 className="link text-4xl md:text-8xl font-bold uppercase tracking-tight text-white transition-colors duration-150 group-hover:text-[#171717]">
                             {project.name}
                         </h3>
-                        <span className="link whitespace-nowrap text-base font-bold md:text-lg text-[#FF3D49] transition-colors duration-150 group-hover:text-[#171717]">
+                        <span className="link whitespace-nowrap text-base font-bold md:text-lg text-accent transition-colors duration-150 group-hover:text-[#171717]">
                             <StaggeredLink>VISIT SITE ↗</StaggeredLink>
                         </span>
                     </div>

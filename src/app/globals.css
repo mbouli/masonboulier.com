@@ -13,11 +13,14 @@
 :root {
   --background: #171717;
   --foreground: #ffffff;
+  /* Cycled at runtime by AccentProvider — see PALETTE there. */
+  --accent: #FF3D49;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-accent: var(--accent);
 }
 
 @media (prefers-color-scheme: dark) {

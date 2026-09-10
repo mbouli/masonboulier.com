@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import AccentProvider from "@/components/AccentProvider";
 
 export const metadata: Metadata = {
   title: "Mason Boulier",
@@ -17,7 +18,9 @@ export default function RootLayout({
       <body
         className={`antialiased`}
       >
-        {children}
+        <AccentProvider>
+          {children}
+        </AccentProvider>
       </body>
     </html>
   );

@@ -2,13 +2,14 @@
 import { useState, useEffect, ReactNode } from "react";
 import { motion, MotionValue, useScroll, useTransform } from "framer-motion";
 import StaggeredLink from "./StaggeredLink";
+import { useAccent } from "./AccentProvider";
 
-/** Bottom edge of the nav capsules, measured from the top of the viewport. */
 const NAV_BAND = 76;
 
 const Navbar = () => {
     const [currentTime, setCurrentTime] = useState('');
     const [overWork, setOverWork] = useState(false);
+    const { cycle } = useAccent();
     const { scrollY } = useScroll();
     const opacity = useTransform(scrollY, [0, 120], [0, 1]);
 
@@ -52,14 +53,23 @@ const Navbar = () => {
     return (
         <nav className="fixed px-9 py-2 top-5 left-0 right-0 z-20 w-full flex justify-between items-center text-lg font-bold text-black">
             <Glass opacity={opacity}>
-                <div className={`space-x-2 md:space-x-8 text-base md:text-sm transition-colors duration-300 ${overWork ? 'text-white' : 'text-[#FF3D49]'}`}>
+                <div className={`space-x-2 md:space-x-8 text-base md:text-sm transition-colors duration-300 ${overWork ? 'text-stone-300' : 'text-accent'}`}>
                     <StaggeredLink href="/">HOME</StaggeredLink>
                     <StaggeredLink href="https://photo.mase.zip" newTab={true}>ARCHIVE</StaggeredLink>
                 </div>
             </Glass>
             <Glass opacity={opacity}>
-                <div className={`space-x-4 md:space-x-8 text-base font-bold md:text-sm transition-colors duration-300 ${overWork ? 'text-white' : 'text-[#FF3D49]'}`}>
-                    <h1 className="link">TIME (CST) — {currentTime}</h1>
+                <div className={`space-x-4 md:space-x-8 text-base font-bold md:text-sm transition-colors duration-300 ${overWork ? 'text-stone-300' : 'text-accent'}`}>
+                    <h1 className="link">
+                        <button
+                            type="button"
+                            onClick={cycle}
+                            aria-label="Change the site's accent color"
+                            className="cursor-pointer select-none"
+                        >
+                            TIME (CST) — {currentTime}
+                        </button>
+                    </h1>
                 </div>
             </Glass>
         </nav>

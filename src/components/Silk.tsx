@@ -87,6 +87,7 @@ void main() {
 
 interface SilkPlaneProps {
     uniforms: SilkUniforms;
+    target: Color;
 }
 
 const Background = () => {
@@ -97,7 +98,7 @@ const Background = () => {
     return null;
 };
 
-const SilkPlane = forwardRef<Mesh, SilkPlaneProps>(function SilkPlane({ uniforms }, ref) {
+const SilkPlane = forwardRef<Mesh, SilkPlaneProps>(function SilkPlane({ uniforms, target }, ref) {
     const { viewport } = useThree();
 
     useLayoutEffect(() => {
@@ -114,6 +115,7 @@ const SilkPlane = forwardRef<Mesh, SilkPlaneProps>(function SilkPlane({ uniforms
                 uniforms: SilkUniforms;
             };
             material.uniforms.uTime.value += 0.1 * delta;
+            material.uniforms.uColor.value.lerp(target, Math.min(1, delta * 3));
         }
     });
 
@@ -137,22 +139,27 @@ export interface SilkProps {
 const Silk: React.FC<SilkProps> = ({ speed = 5, scale = 1, color = '#7B7481', noiseIntensity = 1.5, rotation = 0 }) => {
     const meshRef = useRef<Mesh>(null);
 
+    const target = useMemo(() => new Color(...hexToNormalizedRGB(color)), [color]);
+
     const uniforms = useMemo<SilkUniforms>(
         () => ({
             uSpeed: { value: speed },
             uScale: { value: scale },
             uNoiseIntensity: { value: noiseIntensity },
-            uColor: { value: new Color(...hexToNormalizedRGB(color)) },
+            uColor: { value: target.clone() },
             uRotation: { value: rotation },
             uTime: { value: 0 }
         }),
-        [speed, scale, noiseIntensity, color, rotation]
+        // `target` is intentionally omitted: uColor eases toward it each frame in SilkPlane
+        // rather than being rebuilt, so a color change melts instead of snapping.
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+        [speed, scale, noiseIntensity, rotation]
     );
 
     return (
         <Canvas dpr={[1, 2]} frameloop="always">
             <Background />
-            <SilkPlane ref={meshRef} uniforms={uniforms} />
+            <SilkPlane ref={meshRef} uniforms={uniforms} target={target} />
         </Canvas>
     );
 };

@@ -1,10 +1,18 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { motion, AnimatePresence, easeInOut } from 'framer-motion'
 
 export default function Loader() {
     const [done, setDone] = useState(false);
+
+    useEffect(() => {
+        // Browsers restore the previous scroll position on refresh, which drops you partway
+        // into the work section. The intro should always start at the top.
+        window.history.scrollRestoration = 'manual';
+        window.scrollTo({ top: 0, behavior: 'instant' });
+    }, []);
+
     return (
         <AnimatePresence>
             {!done && (
@@ -17,7 +25,7 @@ export default function Loader() {
                         ease: [0.895, 0.03, 0.685, 0.22], // EASE IN QUART
                     }}
                     onAnimationComplete={() => setDone(true)}
-                    className="fixed inset-0 z-50 bg-[#FF3D49] text-white flex items-center justify-center"
+                    className="fixed inset-0 z-50 bg-accent text-white flex items-center justify-center"
                 >
                     <TextStagger>MADE YOU LOOK</TextStagger>
                 </motion.div>
