@@ -51,15 +51,15 @@ const Navbar = () => {
     }, []);
 
     return (
-        <nav className="fixed px-9 py-2 top-5 left-0 right-0 z-20 w-full flex justify-between items-center text-lg font-bold text-black">
+        <nav className="fixed px-3 md:px-9 py-2 top-5 left-0 right-0 z-20 w-full flex justify-between items-center text-lg font-bold text-black">
             <Glass opacity={opacity}>
-                <div className={`space-x-2 md:space-x-8 text-base md:text-sm transition-colors duration-300 ${overWork ? 'text-stone-300' : 'text-accent'}`}>
+                <div className={`space-x-3 md:space-x-8 text-xs md:text-sm transition-colors duration-300 ${overWork ? 'text-stone-300' : 'text-accent'}`}>
                     <StaggeredLink href="/">HOME</StaggeredLink>
                     <StaggeredLink href="https://photo.mase.zip" newTab={true}>ARCHIVE</StaggeredLink>
                 </div>
             </Glass>
             <Glass opacity={opacity}>
-                <div className={`space-x-4 md:space-x-8 text-base font-bold md:text-sm transition-colors duration-300 ${overWork ? 'text-stone-300' : 'text-accent'}`}>
+                <div className={`space-x-4 md:space-x-8 text-xs font-bold md:text-sm transition-colors duration-300 ${overWork ? 'text-stone-300' : 'text-accent'}`}>
                     <h1 className="link">
                         <button
                             type="button"
@@ -77,7 +77,7 @@ const Navbar = () => {
 }
 
 const Glass = ({ children, opacity }: { children: ReactNode; opacity: MotionValue<number> }) => (
-    <div className="relative rounded-full px-5 py-2.5">
+    <div className="relative rounded-full px-4 py-2 md:px-5 md:py-2.5">
         <motion.span aria-hidden style={{ opacity }} className="pointer-events-none absolute inset-0">
             <span className="absolute inset-0 rounded-full bg-white/[0.06] backdrop-blur-[10px] backdrop-saturate-[180%] shadow-[0_8px_28px_-10px_rgba(0,0,0,0.5),inset_0_1px_1px_0_rgba(255,255,255,0.4),inset_0_-1px_1px_0_rgba(255,255,255,0.14)]" />
             <span className="absolute inset-0 rounded-full backdrop-blur-[18px] [mask-image:linear-gradient(to_bottom,black,transparent_38%,transparent_62%,black)] [-webkit-mask-image:linear-gradient(to_bottom,black,transparent_38%,transparent_62%,black)]" />

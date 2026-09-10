@@ -4,13 +4,13 @@ import ScrollCue from './ScrollCue';
 
 const Hero = () => {
     return (
-        <div style={{ width: '100%', height: '100vh', position: 'relative' }}>
+        <div className="relative w-full h-svh">
             <SilkBackground />
             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center text-center z-10">
                 <span
                     role="img"
                     aria-label="Mason Boulier"
-                    className="inline-block w-[540px] max-w-full aspect-6046/2000 bg-accent transition-colors duration-500 md:-mb-[35px]"
+                    className="inline-block w-[min(540px,80vw)] aspect-6046/2000 bg-accent transition-colors duration-500 md:-mb-[35px]"
                     style={{
                         maskImage: 'url(/masonboulier.png)',
                         WebkitMaskImage: 'url(/masonboulier.png)',
