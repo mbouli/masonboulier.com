@@ -1,15 +1,5 @@
 @import "tailwindcss";
 
-@font-face {
-  font-family: 'PPNM-Medium';
-  src: url('../../public/font/PPNM-Medium.woff') format("woff");
-}
-
-@font-face {
-  font-family: 'PPNM-Regular';
-  src: url('../../public/font/PPNM-Book.woff') format("woff");
-}
-
 :root {
   --background: #171717;
   --foreground: #ffffff;
@@ -21,6 +11,8 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-accent: var(--accent);
+  --font-sans: var(--font-ppnm-book);
+  --font-medium: var(--font-ppnm-medium);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -37,13 +29,13 @@ html {
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: 'PPNM-Regular';
+  font-family: var(--font-ppnm-book);
   letter-spacing: .02em;
   -webkit-font-smoothing: antialiased;
 }
 
 .link {
   letter-spacing: .03em;
-  font-family: 'PPNM-Medium';
+  font-family: var(--font-ppnm-medium);
   -webkit-font-smoothing: antialiased;
 }

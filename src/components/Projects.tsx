@@ -2,8 +2,8 @@
 
 import { motion } from 'framer-motion'
 import Image, { StaticImageData } from 'next/image'
-import calent from '../../public/uploads/projects/calent-icon.png'
-import archive from '../../public/uploads/projects/archive-icon.png'
+import calent from '../../public/uploads/projects/calent-icon.webp'
+import archive from '../../public/uploads/projects/archive-icon.webp'
 import StaggeredLink from './StaggeredLink'
 
 type Project = {
@@ -74,6 +74,7 @@ const Projects = () => {
                         <Image
                             src={project.preview}
                             alt={`${project.name} preview`}
+                            sizes="(max-width: 896px) 100vw, 896px"
                             className="w-full max-w-4xl h-auto rounded-2xl"
                         />
                     </div>

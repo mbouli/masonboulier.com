@@ -12,8 +12,8 @@ const Hero = () => {
                     aria-label="Mason Boulier"
                     className="inline-block w-[min(540px,80vw)] aspect-6046/2000 bg-accent transition-colors duration-500 md:-mb-[35px]"
                     style={{
-                        maskImage: 'url(/masonboulier.png)',
-                        WebkitMaskImage: 'url(/masonboulier.png)',
+                        maskImage: 'url(/masonboulier.webp)',
+                        WebkitMaskImage: 'url(/masonboulier.webp)',
                         maskSize: '100% 100%',
                         WebkitMaskSize: '100% 100%',
                         maskRepeat: 'no-repeat',

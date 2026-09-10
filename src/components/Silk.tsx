@@ -134,9 +134,12 @@ export interface SilkProps {
     color?: string;
     noiseIntensity?: number;
     rotation?: number;
+    /** Set false to halt the render loop — the shader is full-screen and costs real
+     *  battery, so it should not keep drawing once the hero is scrolled past. */
+    active?: boolean;
 }
 
-const Silk: React.FC<SilkProps> = ({ speed = 5, scale = 1, color = '#7B7481', noiseIntensity = 1.5, rotation = 0 }) => {
+const Silk: React.FC<SilkProps> = ({ speed = 5, scale = 1, color = '#7B7481', noiseIntensity = 1.5, rotation = 0, active = true }) => {
     const meshRef = useRef<Mesh>(null);
 
     const target = useMemo(() => new Color(...hexToNormalizedRGB(color)), [color]);
@@ -157,7 +160,10 @@ const Silk: React.FC<SilkProps> = ({ speed = 5, scale = 1, color = '#7B7481', no
     );
 
     return (
-        <Canvas dpr={[1, 2]} frameloop="always">
+        // A full-screen fragment shader at 2x DPR is the single most expensive thing on a
+        // phone. 1.5 is visually indistinguishable here (the pattern is soft and noisy)
+        // and cuts the fragment count by ~44%.
+        <Canvas dpr={[1, 1.5]} frameloop={active ? 'always' : 'never'}>
             <Background />
             <SilkPlane ref={meshRef} uniforms={uniforms} target={target} />
         </Canvas>
